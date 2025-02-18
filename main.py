@@ -2,7 +2,7 @@ from tkinter import *
 
 main_win = Tk() 
 
-def CreateWin(main_win):
+def CreateWin():
     main_win.geometry("720x360")
     main_win.resizable(False, False)
     main_win.title("Game RPS")
@@ -10,6 +10,6 @@ def CreateWin(main_win):
     main_win.iconphoto(False, icon)
     main_win.config(bg="black")
 
-CreateWin(main_win)
+CreateWin()
 
 main_win.mainloop()
