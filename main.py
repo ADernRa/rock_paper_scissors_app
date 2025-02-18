@@ -19,8 +19,6 @@ def GamePlay():
 
 def Info():
     ClearWin()
-    
-
 
 def Leave():
     ClearWin()
