@@ -22,24 +22,32 @@ def GamePlay():
     def Win():
         ClearWin()
         lbl_win = Label(text="Вы победили\n+1", bg="black", fg = "lime", font=("Arial", 16))
-        lbl_win.place(anchor="c", x=360, y = 180)
+        lbl_win.place(anchor="c", x=360, y = 130)
+
+        btn_back = Button(text="Продолжить", width=10, height=2, command=GamePlay)
+        btn_back.place(anchor="c", y=180, x = 360)
+
         global score
         score = int(score) + 1
-        GamePlay()
     
     def Lose():
         ClearWin()
         global score
-        lbl_win = Label(text=f"Вы проиграли\n-{score}", bg="black", fg = "lime", font=("Arial", 16))
-        lbl_win.place(anchor="c", x=360, y = 180)
 
+        btn_back = Button(text="Продолжить", width=10, height=2, command=GamePlay)
+        btn_back.place(anchor="c", y=180, x = 360)
+        
+        lbl_win = Label(text=f"Вы проиграли\n-{score}", bg="black", fg = "lime", font=("Arial", 16))
+        lbl_win.place(anchor="c", x=360, y = 130)
         score = 0
-        GamePlay()
 
     def Draw():
+        ClearWin()
+        btn_back = Button(text="Продолжить", width=10, height=2, command=GamePlay)
+        btn_back.place(anchor="c", y=180, x = 360)
+        
         lbl_win = Label(text=f"Ничья", bg="black", fg = "lime", font=("Arial", 16))
-        lbl_win.place(anchor="c", x=360, y = 180)
-        GamePlay()
+        lbl_win.place(anchor="c", x=360, y = 130)
 
     def click_brick():
         bot_var = random.randint(0,2)
@@ -83,7 +91,7 @@ def GamePlay():
     btn_paper= Button(text="Бумага", width=10, height=2, command=click_paper)
     btn_paper.place(anchor="c", y=180, x = 460)
 
-    btn_ex= Button(text="✗", width=2, height=2)
+    btn_ex= Button(text="✗", width=3, height=2, command= MainMenu)
     btn_ex.place(anchor="c", y=20, x = 700)
 
 def Info():
